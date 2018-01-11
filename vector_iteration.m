@@ -3,6 +3,7 @@ function [eigenvalue, eigenvector, errors] = vector_iteration(matrix)
 assert(rows == columns, 'matrix must be quadratic');
 dimension = rows;
 eigenvector = rand(dimension, 1);
+eigenvector = eigenvector / norm(eigenvector, 1);
 errors = zeros(0);
 iteration_step = 1;
 while true
