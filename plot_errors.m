@@ -5,13 +5,12 @@ loglog(1 ./ exp(1:30), ':');
 hold on
 for i = 1:length(dimensions)
 dimension = dimensions(i);
-A = random_adjacency_matrix(dimension);
-G = google_matrix(A, 0.85);
-[eigenvalue, eigenvector, errors] = vector_iteration(G);
+adjacency_matrix = random_adjacency_matrix(dimension);
+[eigenvalue, eigenvector, errors] = google_matrix_vector_iteration(adjacency_matrix, 0.85);
 loglog(errors);
-
 end
-axis([1 45 1e-13 1]);
+
+axis([1 160 1e-13 1]);
 set(gca,...
 'Units', 'normalized',...
 'Position',[.15 .2 .75 .7],...

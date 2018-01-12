@@ -1,2 +1,2 @@
-[eigenvalue, eigenvector, errors] = vector_iteration(google_matrix(random_adjacency_matrix(100), 0.85));
+[eigenvalue, eigenvector, errors] = google_matrix_vector_iteration(random_adjacency_matrix(10000), 0.85)
 length(errors)
